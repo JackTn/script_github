@@ -1,14 +1,12 @@
-import { getServiceName } from './githubUtils';
+import { getRepoContent } from './githubUtils';
 
 const res = async () => {
   try {
-    const res = await getServiceName();
-    console.log(res)
+    const res = await getRepoContent();
     return res;
   } catch (err) {
     console.error(err);
   }
 };
-let serviceName = res()
-console.log(serviceName);
+res();
 console.log("finish");

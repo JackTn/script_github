@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { Octokit } from 'octokit';
 
 const octokit = new Octokit({
-  auth: ``,
+  auth: `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`,
 });
 
 export const dePaginate = (GithubFn:any) => async (params:any) => {
@@ -26,7 +26,6 @@ export const dePaginate = (GithubFn:any) => async (params:any) => {
       return firstPageResult;
     }
     const test = _.range(2, lastPageNumber + 1)
-    console.log('test', test)
     // request all other pages at the same time
     const restOfPagesResults = await  Promise.all(
         _.range(2, lastPageNumber + 1).map((page:any) =>
